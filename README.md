@@ -1,16 +1,46 @@
-# Trabajo practico N° 4 : Ciclo de vida de un componente
 
-para este trabajo vamos a repasar los temas visto en la clase de ciclo de vida de un componente
-creamos un componente que se llame alertas
+# Trabajo Práctico N° 4: Ciclo de vida de un componente
 
-Crear un componente ``Lista`` que renderice una lista de elementos (provista en la carpeta  ``resource``) la misma tiene que cargarse en el hook ``onMounted`` para simular una demora en la misma podemos utilizar el metodo setTimeout que nos permite ejecutar una funcion llegado a determinado tiempo medido en milisegundos 
+En este trabajo vamos a repasar los temas vistos en la clase sobre el ciclo de vida de un componente.  
+Debemos crear un componente llamado `Alertas`.
+
+## Componente Lista
+Crear un componente llamado `Lista` que renderice una lista de elementos (provista en la carpeta `resources`).  
+La lista debe cargarse dentro del hook `onMounted`. Para simular una demora en la carga, podemos utilizar el método `setTimeout`, que permite ejecutar una función luego de un tiempo determinado (en milisegundos).
+
 ```javascript
-setTimeout(()=>{}, 3000)
+setTimeout(() => {
+  // acción a ejecutar luego de 3 segundos
+}, 3000);
 ```
-esta funcion ejecutara una accion pasado 3 segundos.
 
-Crear un componente ``Tareas`` el cual debe contener una lista de tareas a las cuales podremos agregar nuevas, crear los hook ``onBeforeUpdated``  y ``onUpdated`` los cuales deben mostrar por consola: **lista aun no modificada** y **lista modificada** respectivamente
-y debe pintar de color azul los item anteriores a lo modificacion.
+Esta función ejecutará una acción **después de 3 segundos**.
 
-Crear un componente DimensionComponente el cual mostrara  un titulo con las dimensiones del componente
+---
+
+## Componente Tareas
+Crear un componente llamado `Tareas`, el cual debe contener una lista de tareas a las que podamos **agregar nuevas**.  
+En este componente deben utilizarse los hooks `onBeforeUpdate` y `onUpdated`, mostrando en consola los siguientes mensajes:
+- En `onBeforeUpdate`: **"Lista aún no modificada"**
+- En `onUpdated`: **"Lista modificada"**
+
+Además, se debe **pintar de algun color a elección** los ítems que existían **antes** de la modificación.
+
+---
+
+## Componente DimensionComponente
+Crear un componente llamado `DimensionComponente`, que mostrará un título con las dimensiones del componente.  
+Para esto debemos **escuchar eventos**, los cuales deben agregarse en el hook `onMounted` y removerse en el hook `onUnmounted`.
+
+> En este caso, escucharemos el evento `resize` del elemento `window`.
+Recuerden que cuando escuchamos podemos pasar una función al evento 
+
+---
+
+## Integración de los componentes
+Para mostrar estos tres componentes ( `Lista`, `Tareas`, `DimensionComponente`) deben llamarse **dinámicamente**, como lo aprendimos en clase.  
+La forma de selección es libre: pueden usar **tags**, **botones**, **select**, etc.
+
+---
+
 
